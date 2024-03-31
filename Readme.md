@@ -157,3 +157,4 @@ click on save, and now you should have better performance when using direct x as
 
 ### credits
 - [u/Curious_Increase_592](https://www.reddit.com/user/Curious_Increase_592/), a member from the great [r/linux_gaming](https://www.reddit.com/r/linux_gaming/) for suggesting dxvk-gplasync
+- @ henrydc (on discord) for most of the guide, otherwise, it will take longer time to figure out the method

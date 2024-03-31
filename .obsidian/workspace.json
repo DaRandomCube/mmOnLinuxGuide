@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "4e8f44660e988b1e",
+    "type": "split",
+    "children": [
+      {
+        "id": "51886aa166c65440",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37b9527390d0e998",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "How to install mario multiverse on linux.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "52d5c351a4c30152",
+    "type": "split",
+    "children": [
+      {
+        "id": "a1cd5b6deb5b8051",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f8f7485cb1b4ae5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "39534c9624678f7d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b0ea90d84f8901b5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7e5b08c5c979c21b",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a0dcb0c2023606a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8ab7aadd36d37076",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "How to install mario multiverse on linux.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "53d06d79e180116a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "How to install mario multiverse on linux.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "03ff07b8f017a18e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "26b1ab9838b480bc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "How to install mario multiverse on linux.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "4f8f7485cb1b4ae5",
+  "lastOpenFiles": [
+    "mmOnLinuxGuide",
+    "Screencast_20240331_201722.webm",
+    "Screencast_20240331_201506.webm",
+    "Screencast_20240329_015654.webm",
+    "How to install mario multiverse on linux.md",
+    "Pasted image 20240331202244.png",
+    "Pasted image 20240329020908.png",
+    "Pasted image 20240329020457.png",
+    "Screencast_20240329_015340.webm",
+    "Pasted image 20240329014852.png",
+    "Pasted image 20240329014422.png",
+    "Pasted image 20240329013630.png",
+    "Pasted image 20240329013412.png",
+    "Pasted image 20240329013308.png",
+    "Pasted image 20240327200340.png",
+    "Pasted image 20240327200252.png"
+  ]
+}

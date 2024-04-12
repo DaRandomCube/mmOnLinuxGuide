@@ -101,13 +101,18 @@ now press on save to finish creating an empty prefix, and now we will install ma
 
 1. download both of the downloader and the dlls and extract them inside the MarioMultiverseFiles we've created earlier
 2. go to [DiscordBuddyRedux](https://github.com/batteryshark/DiscordBuddyRedux) github page and download it from the latest release, as shown here, and extract it to any folder, let's name it DiscordBuddyRedux for example 
-https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/bb18cd2f-8dfc-4c5c-9f62-7962ce3ebae8
+
+[Screencast_20240329_015340.webm](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/116cac14-3ca1-43f3-ac43-7063d955ee31)
+
 3. in lutris, press on the prefix we created, and then click on wine logo, select wine console option, a prefix configuration update window appear, thats normal and you should wait 
-https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/2197623b-2d92-4a80-ab26-d29133e01beb
+
+[Screencast_20240329_015654.webm](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/a3e5ee63-ed08-46d3-9f8e-954aa7e5c936)
+
+
 
 4. navigate to the parent folder by typing `cd ..` , then go to DiscordBuddyRedux by typing `cd DiscordBuddyRedux` !![Pasted image 20240329020457](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/ec887b76-f825-46d3-a29e-aa61c0ad40ec)
 5. type generatediscordtoken.exe to run it
-6. you'll need to input you discord email and password don't worry, they won't go to me, and discord buddy redux name is mentioned in mario multiverse settings as shown here ![Pasted image 20240329020908](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/dcdf6085-1b46-452a-a506-3841fba356ca)
+6. you'll need to input you discord email and password don't worry, they won't go to me, and discord buddy redux name is mentioned in mario multiverse settings as shown here, if it didn't work with correct credentials make sure you have disabled 2fa ![Pasted image 20240329020908](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/dcdf6085-1b46-452a-a506-3841fba356ca)
 7. good, now open any file manager you have and go to discord buddy folder to copy `discordbuddy.dll` `discordbuddy.ini` `ktwm32.dll` to the (mario multiverse files) folder
 8. from lutris press on wine logo and choose wine configuration option, from that window, go to libraries tab and input ktmw32 to the text box and click add, then press ok to close the configuration
 9. assuming you closed the wine console wine console, open it again, navigate to the parnt directory by typing `cd ..` , then go to mm files directory by typing `cd MarioMultiverseFiles`
@@ -135,10 +140,13 @@ things you need :
 dxvk-async is modified version of dxvk with some patches to improve performance, i (and the dxvk-async maintainer) MUST note that t's NOT recommended for multiplayer games, or there's a chance you'll get BANNED, use it only on singleplayer
 
 to install it, launch protonup-qt, change (install for) to lutris  (bitrate is low idk why) 
-https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/7c4b1fdd-1271-49b7-a01a-3fa569714f09
+
+[Screencast_20240331_201506.webm](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/f793edf0-1ad1-484f-a318-ebe4611e3f5d)
+
 
 click on add version and select DXVK-async and choose install 
-https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/08a19929-1d4c-4165-bf72-0a5682162398
+
+[Screencast_20240331_201722.webm](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/1bef621e-c940-48e8-b8df-898bf6be376e)
 
 now open lutris, choose mario multiverse, click the arrow next to play and choose configure
 in system options, scroll down to environment variable, and add these options with values
@@ -147,7 +155,9 @@ in system options, scroll down to environment variable, and add these options wi
 | ------------------ | ----- |
 | DXVK_ASYNC         | 1     |
 | DXVK_GPLASYNCCACHE | 1     |
+
 ![Pasted image 20240331202244](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/604956eb-50d1-458f-bcd6-9865f7ef6e02)
+
 click on save, and now you should have better performance when using direct x as a render
 
 

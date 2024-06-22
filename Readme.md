@@ -1,12 +1,13 @@
-# notice: this guide is UNFINISHED, for now use the old one that uses lutris in the main branch
 
+installing mario multiverse on linux is tricky mainly due to the discord verification and the installer being a cli app
 
 
 ##### requirements
 - bottles and flatseal installed via [flatpak](https://flatpak.org/)
 - dxvk-gplaasync (to improve direct-x renderer performance)
 - system and drivers (including vulkan) are installed and up to date
-- discord app installed with [DiscordBuddyRedux](https://github.com/batteryshark/DiscordBuddyRedux)
+- discord app installed for verification code, obviously
+- [DiscordBuddyRedux](https://github.com/batteryshark/DiscordBuddyRedux) for making discord verification work
 
 ##### notes
 this is tested on my arch linux host, but it should work for other distros
@@ -47,40 +48,42 @@ flatpak install flathub com.usebottles.bottles
 
 ###### prerequests
 
-launch bottles and wait for the setup to finish, after that go to the 3-dots > preferences > dll components, scroll down to install the latest version of dxvk-gplasync as you see in this video
+launch bottles and wait for the setup to finish
+go to the 3-dots > preferences, select dll components tab, scroll down to install the latest version of **dxvk-gplasync** as you see in this video, since MM editor perofrmance is bad on regular dxvk
+**desclaimar: never use dxvk-gplasync with multiplayer/online games, as it might ban you, regular dxvk works fine with those games**
+switch to runners tab, open "soda" card and install soda 8.0-2, as open gl in MM doesn't work with newer version
 
 
 ###### bottle creation and settings
 
-press on the plus icon or the (create new) button, choose a name for it **and choose custom instead of gaming** and change the architecture to 32bit so the game displays somehting other than black screen
-then wait it to finish
+press on the plus icon or the (create new) button and name it, choose gaming instead of applications
+after it finishes, goto the bottle > settings and change the runner to soda 8.0-2
+![Screenshot_20240622_215944](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/e3738834-ae42-4a32-9339-436da3757236)
+make sure that the dxvk option is set to dxvk-gplasync and not to the regular dxvk, did you read the desclaimar anyway?
+go down to (dll overrides) and add 'ktmw32' as a new override, keep it (Native, then builtin) unchanged
+after you close the pop-up, goto the (environment variables) and add both `DXVK_ASYNC` and `DXVK_GPLASYNCCACHE` with the value of "1" as shown in this video
 
-after it finishes, change some options like what you see in pictures
 
-*discreate graphics is optional, yet recommended*
-
-![image](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/4de1a0db-ac52-4f25-bed1-83941b013dec)
-
-![image](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/b7621ff2-9b40-4180-9e42-68b7c53b50ac)
-
-![image](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/8b6fc007-30a1-49d7-ac39-463106582a33)
-
-![image](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/7b9dc2b0-047f-456f-ac41-3d88274eb743)
-
-![image](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/114e1abb-d99e-4e36-9e0f-65a4ca665b23)
+[](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/85d3687b-2466-4cb4-9439-5f7900aae08e)
 
 
 ##### installing the game
 
 ##### installing mario multiverse
 
-###### before we start
+###### fixing bottles isolation
+
 flatpak apps are isolated by nature, so it won't be able to access every folder like normal apps, including mario multiverse one, so we need to make a folder for MM and allow bottles to access it
 
-1. make a directory for MM, let's create a one in documents folder and call it MM
-2. open flatseal, navigate to bottles, scroll down to filesystem section, in (other files) click on the puls icon and enter the MM path you can get it by right clicking on MM folder and finding the info section or something similar, if the path doesn't include the MM folder name, you have to include it yourself (don't forgot to add a / if it doesn't exist at the end of previous directory)
+1. make a directory for MM, let's create a one in documents folder and call it MM for example
+2. open flatseal, navigate to bottles, scroll down to filesystem section, in (other files) click on the puls icon and enter the MM path and `xdg-data/applications` to be able to add desktop enteries
+ 
+you can get the path by right clicking on MM folder and finding the info section or something similar, if the path doesn't include the MM folder name, you have to include it yourself (don't forgot to add a / if it doesn't exist at the end of previous directory) or you can input the directory manually
+
 3. close flatseal for now, and restart bottles
 4. to make accessing the folder easier in bottles, go to the bottle you made > settings, scroll down until you find (manage drives), open it and add a drive and paste the path there (don't forgot what did i say above)
+
+###### the actual install
 
 1. download both of the downloader and the dlls and extract them inside the MM folder we've created earlier
 2. go to [DiscordBuddyRedux](https://github.com/batteryshark/DiscordBuddyRedux) github page and download it from the latest release, as shown here, and extract it to MM folder
@@ -88,52 +91,17 @@ flatpak apps are isolated by nature, so it won't be able to access every folder 
 4. go to the mm directory we have created using the drive letter, then click on GenerateDiscordToken.exe (don't worry, even MM settings mentiones it)
 ![Pasted image 20240329020908](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/dcdf6085-1b46-452a-a506-3841fba356ca)
 5. after it succesfully finish, close the generatediscordtoken.exe and open MarioDownloader_for_username.exe, do what it says and wait for it to download (pasting can be done by right click > edit > paste)
-6. the screen of the game itself is currently black, to fix it click on (run excutable) button, change filter from (supported excutable, all files) to (all files) and open mario config, change the game's renderer from opengl to directx or directx-hd, then close and reopen the game
 
-##### map editor and dxvk
+###### adding desktop enteries
 
-if you want to create levels, it is recommended to follow this section, otherwise the performance well be poor
-
-things you need :
-- flatpak installed
-- proton-up gui
-- vulkan supported and installed
-
-###### 1: installing proton-up qt for dxvk-async
- proton up is an application to install different runners and component to enhance the gaming experience we will use it for installing dxvk-async, make sure you have flatpak installed (tutorial [here](https://flatpak.org/setup/))
- after you install flatpak, either use the installed application center (except for ubuntu software, use gnome software instead) and search for proton
- or use the command line :
- `flatpak install flathub net.davidotek.pupgui2`
- with protonup installed you can install dxvk-async
-##### 2: installing dxvk-async
-dxvk-async is modified version of dxvk with some patches to improve performance, i (and the dxvk-async maintainer) MUST note that t's NOT recommended for multiplayer games, or there's a chance you'll get BANNED, use it only on singleplayer
-
-to install it, launch protonup-qt, change (install for) to lutris  (bitrate is low idk why) 
-
-[Screencast_20240331_201506.webm](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/f793edf0-1ad1-484f-a318-ebe4611e3f5d)
-
-
-click on add version and select DXVK-async and choose install 
-
-[Screencast_20240331_201722.webm](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/1bef621e-c940-48e8-b8df-898bf6be376e)
-
-now open lutris, choose mario multiverse, click the arrow next to play and choose configure
-in system options, scroll down to environment variable, and add these options with values
-
-| key                | value |
-| ------------------ | ----- |
-| DXVK_ASYNC         | 1     |
-| DXVK_GPLASYNCCACHE | 1     |
-
-![Pasted image 20240331202244](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/604956eb-50d1-458f-bcd6-9865f7ef6e02)
-
-click on save, and now you should have better performance when using direct x as a render
-
+1. you will need to add the game's exes you want by pressing on "add shortcuts..." and selecting the exes
+2. from the 3-dots menu of each shortcut and clicking (add desktop enetry)
+3. that it, enjoy
 
 ##### known problems
-- when using direct-x as a render for the main game, maximizing the window will result in a worse performance, i don't know a fix for that
-
+- when using direct-x as a render for the main game, maximizing the window will result in a worse performance, i don't know a fix for that, use opengl instead
 
 ### credits
 - [u/Curious_Increase_592](https://www.reddit.com/user/Curious_Increase_592/), a member from the great [r/linux_gaming](https://www.reddit.com/r/linux_gaming/) for suggesting dxvk-gplasync
 - @ henrydc (on discord) for most of the guide, otherwise, it will take longer time to figure out the method
+- everyone who made the tools used in the guide 

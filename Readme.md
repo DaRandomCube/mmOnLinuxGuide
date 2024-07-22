@@ -102,8 +102,10 @@ you can get the path by right clicking on MM folder and finding the info section
 
 ##### known problems
 - when using direct-x as a render for the main game, maximizing the window will result in a worse performance
+  
      i don't know a fix for that, use opengl for now
 - when recommending a level, the recommendation image is black in the server
+  
      this is because you use wayland as a display server, currently unfixable without either launching wine on wayland nativly (experimental, not recommended yet) or using x11 as a display server
 
 ### credits

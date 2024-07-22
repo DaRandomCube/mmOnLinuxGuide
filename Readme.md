@@ -48,20 +48,22 @@ flatpak install flathub com.usebottles.bottles
 
 ###### prerequests
 
-launch bottles and wait for the setup to finish
-go to the 3-dots > preferences, select dll components tab, scroll down to install the latest version of **dxvk-gplasync** as you see in this video, since MM editor perofrmance is bad on regular dxvk
+1. launch bottles and wait for the setup to finish
+2. go to the 3-dots > preferences, select dll components tab
+3. scroll down to install the latest version of **dxvk-gplasync** as you see in this video, since MM editor perofrmance is bad on regular dxvk
 **desclaimar: never use dxvk-gplasync with multiplayer/online games, as it might ban you, regular dxvk works fine with those games**
-switch to runners tab, open "soda" card and install soda 8.0-2, as open gl in MM doesn't work with newer version
+4. switch to runners tab, open "soda" card and install soda 8.0-2, as open gl in MM doesn't work with newer version
 
 
 ###### bottle creation and settings
 
-press on the plus icon or the (create new) button and name it, choose gaming instead of applications
-after it finishes, goto the bottle > settings and change the runner to soda 8.0-2
+1. press on the plus icon or the (create new) button and name it
+2. choose gaming instead of applications
+3. after it finishes, goto the bottle > settings and change the runner to soda 8.0-2
 ![Screenshot_20240622_215944](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/e3738834-ae42-4a32-9339-436da3757236)
-make sure that the dxvk option is set to dxvk-gplasync and not to the regular dxvk, did you read the desclaimar anyway?
-go down to (dll overrides) and add 'ktmw32' as a new override, keep it (Native, then builtin) unchanged
-after you close the pop-up, goto the (environment variables) and add both `DXVK_ASYNC` and `DXVK_GPLASYNCCACHE` with the value of "1" as shown in this video
+4. make sure that the dxvk option is set to dxvk-gplasync and not to the regular dxvk, did you read the desclaimar anyway?
+6. go down to (dll overrides) and add 'ktmw32' as a new override, keep it (Native, then builtin) unchanged
+7. after you close the pop-up, goto the (environment variables) and add both `DXVK_ASYNC` and `DXVK_GPLASYNCCACHE` with the value of "1" as shown in this video
 
 
 [](https://github.com/DaRandomCube/mmOnLinuxGuide/assets/93283139/85d3687b-2466-4cb4-9439-5f7900aae08e)
@@ -99,7 +101,10 @@ you can get the path by right clicking on MM folder and finding the info section
 3. that it, enjoy
 
 ##### known problems
-- when using direct-x as a render for the main game, maximizing the window will result in a worse performance, i don't know a fix for that, use opengl instead
+- when using direct-x as a render for the main game, maximizing the window will result in a worse performance
+     i don't know a fix for that, use opengl for now
+- when recommending a level, the recommendation image is black in the server
+     this is because you use wayland as a display server, currently unfixable without either launching wine on wayland nativly (experimental, not recommended yet) or using x11 as a display server
 
 ### credits
 - [u/Curious_Increase_592](https://www.reddit.com/user/Curious_Increase_592/), a member from the great [r/linux_gaming](https://www.reddit.com/r/linux_gaming/) for suggesting dxvk-gplasync
